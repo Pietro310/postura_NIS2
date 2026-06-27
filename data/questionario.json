@@ -11,78 +11,71 @@
     "10. SUPPLY CHAIN": 5
   },
   "opzioni_risposta_standard": [
-    {
-      "label": "Non applicabile",
-      "value": -1
-    },
-    {
-      "label": "No",
-      "value": 0
-    },
-    {
-      "label": "Mai",
-      "value": 0
-    },
-    {
-      "label": "Nessuno",
-      "value": 0
-    },
-    {
-      "label": "In valutazione",
-      "value": 1
-    },
-    {
-      "label": "Informale",
-      "value": 1
-    },
-    {
-      "label": "Solo su richiesta",
-      "value": 1
-    },
-    {
-      "label": "Occasionale",
-      "value": 1
-    },
-    {
-      "label": "Parzialmente",
-      "value": 2
-    },
-    {
-      "label": "In corso",
-      "value": 2
-    },
-    {
-      "label": "Parziale / in corso",
-      "value": 2
-    },
-    {
-      "label": "Solo alcuni",
-      "value": 2
-    },
-    {
-      "label": "Sì (manuale)",
-      "value": 3
-    },
-    {
-      "label": "Solo i principali",
-      "value": 3
-    },
-    {
-      "label": "Separati per ambiente",
-      "value": 3
-    },
-    {
-      "label": "Sì (automatico)",
-      "value": 4
-    },
-    {
-      "label": "Confermato",
-      "value": 4
-    },
-    {
-      "label": "Sì",
-      "value": 4
-    }
+    { "label": "Non applicabile", "value": -1 },
+    { "label": "No", "value": 0 },
+    { "label": "Mai", "value": 0 },
+    { "label": "Nessuno", "value": 0 },
+    { "label": "Non so", "value": 0 },
+    { "label": "Non lo so", "value": 0 },
+    { "label": "Nessuna separazione", "value": 0 },
+    { "label": "Non ancora nominato", "value": 0 },
+    { "label": "Non gestito", "value": 0 },
+    { "label": "Non conservati", "value": 0 },
+    { "label": "Mai testati", "value": 0 },
+    { "label": "In valutazione", "value": 1 },
+    { "label": "Informale", "value": 1 },
+    { "label": "Solo su richiesta", "value": 1 },
+    { "label": "Occasionale", "value": 1 },
+    { "label": "Accesso diretto", "value": 1 },
+    { "label": "Parzialmente", "value": 2 },
+    { "label": "Parziale", "value": 2 },
+    { "label": "In corso", "value": 2 },
+    { "label": "In corso di definizione", "value": 2 },
+    { "label": "Parziale / in corso", "value": 2 },
+    { "label": "Solo alcuni", "value": 2 },
+    { "label": "Solo per VPN/Remoto", "value": 2 },
+    { "label": "Manuali", "value": 2 },
+    { "label": "Biennale", "value": 2 },
+    { "label": "Non testato", "value": 2 },
+    { "label": "Solo in orario lavorativo", "value": 2 },
+    { "label": "Qualche volta", "value": 2 },
+    { "label": "Sanitari", "value": 2 },
+    { "label": "Finanziari", "value": 2 },
+    { "label": "Entrambi", "value": 2 },
+    { "label": "Sì (manuale)", "value": 3 },
+    { "label": "Sì manually / Sì manualmente", "value": 3 },
+    { "label": "Sì (automatici non testati)", "value": 3 },
+    { "label": "Solo i principali", "value": 3 },
+    { "label": "Separati per ambiente", "value": 3 },
+    { "label": "Nominato senza sostituti", "value": 3 },
+    { "label": "Annuale", "value": 3 },
+    { "label": "Cloud sicuro", "value": 3 },
+    { "label": "Solo Cloud", "value": 3 },
+    { "label": "Solo Locale", "value": 3 },
+    { "label": "Offsite fisico", "value": 3 },
+    { "label": "Periodico", "value": 3 },
+    { "label": "Logging base", "value": 3 },
+    { "label": "Semestrale", "value": 3 },
+    { "label": "Sì (automatico)", "value": 4 },
+    { "label": "Sì in automatico", "value": 4 },
+    { "label": "Sì (automatici testati)", "value": 4 },
+    { "label": "Soggetto essenziale", "value": 4 },
+    { "label": "Soggetto importante", "value": 4 },
+    { "label": "Fornitore critico", "value": 4 },
+    { "label": "Nominato con sostituti", "value": 4 },
+    { "label": "Separati completa", "value": 4 },
+    { "label": "Continua", "value": 4 },
+    { "label": "Per tutti gli accessi", "value": 4 },
+    { "label": "VPN Aziendale", "value": 4 },
+    { "label": "Cloud e Locale", "value": 4 },
+    { "label": "Continuo", "value": 4 },
+    { "label": "SIEM", "value": 4 },
+    { "label": "Testato periodicamente", "value": 4 },
+    { "label": "Reperibilità H24", "value": 4 },
+    { "label": "Trimestrale", "value": 4 },
+    { "label": "Confermato", "value": 4 },
+    { "label": "Sì", "value": 4 },
+    { "label": "Si", "value": 4 }
   ],
   "classi_postura": [
     {

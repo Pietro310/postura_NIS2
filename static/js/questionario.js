@@ -63,7 +63,7 @@ const QuestionarioModule = (() => {
                     <div class="form-group full-width" style="margin-top: var(--space-2);">
                         <label class="checkbox-label" for="req_privacy" style="display: flex; align-items: flex-start; gap: var(--space-3); cursor: pointer; font-size: var(--font-size-sm); color: var(--color-text-secondary);">
                             <input type="checkbox" id="req_privacy" required style="margin-top: 4px; accent-color: var(--color-accent);">
-                            <span>Acconsento al trattamento dei miei dati personali per ricevere comunicazioni commerciali, newsletter e materiale informativo. <span class="required">*</span></span>
+                            <span>Acconsento al trattamento dei miei dati personali per ricevere comunicazioni commerciali, newsletter e materiale informativo.</span>
                         </label>
                         <div class="form-error" id="err_req_privacy" style="margin-top: var(--space-1);">È necessario accettare l'informativa sulla privacy per proseguire</div>
                     </div>
@@ -80,16 +80,16 @@ const QuestionarioModule = (() => {
         const fieldName = `q_${dId}`;
         let html = '';
 
-        const pesoLabel = domanda.peso_speciale 
+        const pesoLabel = domanda.peso_speciale
             ? '<span class="badge-weight">Alto impatto</span>' : '';
-        const requiredMark = domanda.obbligatoria 
+        const requiredMark = domanda.obbligatoria
             ? '<span class="required">*</span>' : '';
 
         // Wrapper con eventuale classe disabilitata
         const hasDep = domanda.dipendenza;
         const depClass = hasDep ? ' disabled' : '';
-        const depDataAttr = hasDep 
-            ? ` data-depends-on="${domanda.dipendenza.domanda_id}" data-depends-value="${domanda.dipendenza.valore_richiesto}"` 
+        const depDataAttr = hasDep
+            ? ` data-depends-on="${domanda.dipendenza.domanda_id}" data-depends-value="${domanda.dipendenza.valore_richiesto}"`
             : '';
 
         html += `<div class="form-group${depClass}" id="group_${fieldName}"${depDataAttr}>`;
@@ -198,10 +198,10 @@ const QuestionarioModule = (() => {
             <div class="step-panel" data-step="${stepNum}">
                 <div class="step-header">
                     <h2>${sezione.titolo}</h2>
-                    ${sezione.scored 
-                        ? `<p>Peso macroarea: ${questionarioData.pesi_macroaree[sezione.categoria] || '—'}%</p>` 
-                        : '<p>Informazioni generali — non incide sullo scoring</p>'
-                    }
+                    ${sezione.scored
+                    ? `<p>Peso macroarea: ${questionarioData.pesi_macroaree[sezione.categoria] || '—'}%</p>`
+                    : '<p>Informazioni generali — non incide sullo scoring</p>'
+                }
                 </div>`;
 
             for (const domanda of sezione.domande) {
@@ -257,10 +257,10 @@ const QuestionarioModule = (() => {
                     const value = el.type === 'radio' ? (el.checked ? el.value : '') : el.value;
                     if (el.type === 'radio' && !el.checked) return;
 
-                    const isMatch = value.toLowerCase() === depValue.toLowerCase() 
+                    const isMatch = value.toLowerCase() === depValue.toLowerCase()
                         || (depValue.toLowerCase() === 'si' && value === 'Sì')
                         || (depValue.toLowerCase() === 'sì' && value.toLowerCase() === 'si');
-                    
+
                     if (isMatch) {
                         group.classList.remove('disabled');
                     } else {

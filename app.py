@@ -139,14 +139,27 @@ def validate_richiedente(dati: dict) -> tuple:
 SCORE_MAP = {
     'non applicabile': -1, 'n/a': -1,
     'no': 0, 'mai': 0, 'nessuno': 0, 'nessuna separazione': 0,
-    'non ancora nominato': 0, 'non classificato': 0,
+    'non ancora nominato': 0, 'non classificato': 0, 'non so': 0, 'non lo so': 0,
+    'non gestito': 0, 'non conservati': 0, 'mai testati': 0,
     'in valutazione': 1, 'informale': 1, 'solo su richiesta': 1, 'occasionale': 1,
-    'parzialmente': 2, 'in corso': 2, 'parziale / in corso': 2,
+    'accesso diretto': 1,
+    'parzialmente': 2, 'in corso': 2, 'parziale / in corso': 2, 'parziale': 2,
     'solo alcuni': 2, 'solo per alcuni': 2, 'solo su alcuni sistemi': 2,
+    'solo per vpn/remoto': 2, 'manuali': 2, 'biennale': 2, 'non testato': 2,
+    'solo in orario lavorativo': 2, 'qualche volta': 2, 'in corso di definizione': 2,
+    'sanitari': 2, 'finanziari': 2, 'entrambi': 2,
     'separati per ambiente': 3, 'sì (manuale)': 3, 'si (manuale)': 3,
-    'solo i principali': 3, 'soggetto importante': 3,
+    'sì manualmente': 3, 'si manualmente': 3, 'sì (automatici non testati)': 3,
+    'solo i principali': 3, 'soggetto importante': 3, 'nominato senza sostituti': 3,
+    'annuale': 3, 'cloud sicuro': 3, 'solo cloud': 3, 'solo locale': 3,
+    'offsite fisico': 3, 'periodico': 3, 'logging base': 3, 'semestrale': 3,
     'sì (automatico)': 4, 'si (automatico)': 4, 'confermato': 4,
-    'soggetto essenziale': 4, 'sì': 4, 'si': 4
+    'sì in automatico': 4, 'si in automatico': 4, 'sì (automatici testati)': 4,
+    'soggetto essenziale': 4, 'fornitore critico': 4, 'nominato con sostituti': 4,
+    'separati completa': 4, 'continua': 4, 'per tutti gli accessi': 4,
+    'vpn aziendale': 4, 'cloud e locale': 4, 'continuo': 4, 'siem': 4,
+    'testato periodicamente': 4, 'reperibilità h24': 4, 'trimestrale': 4,
+    'soggetto essenziale': 4, 'sì': 4, 'si': 4, 'sì ': 4
 }
 
 PESI_MACROAREE = {
