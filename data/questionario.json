@@ -1,0 +1,1065 @@
+{
+  "pesi_macroaree": {
+    "2. PROFILO NIS2": 5,
+    "3. GOVERNANCE": 20,
+    "4. INVENTARIO": 10,
+    "5. FORMAZIONE": 10,
+    "6. PROTEZIONE": 25,
+    "7. RILEVAZIONE": 10,
+    "8. RISPOSTA": 10,
+    "9. RECUPERO": 5,
+    "10. SUPPLY CHAIN": 5
+  },
+  "opzioni_risposta_standard": [
+    {
+      "label": "Non applicabile",
+      "value": -1
+    },
+    {
+      "label": "No",
+      "value": 0
+    },
+    {
+      "label": "Mai",
+      "value": 0
+    },
+    {
+      "label": "Nessuno",
+      "value": 0
+    },
+    {
+      "label": "In valutazione",
+      "value": 1
+    },
+    {
+      "label": "Informale",
+      "value": 1
+    },
+    {
+      "label": "Solo su richiesta",
+      "value": 1
+    },
+    {
+      "label": "Occasionale",
+      "value": 1
+    },
+    {
+      "label": "Parzialmente",
+      "value": 2
+    },
+    {
+      "label": "In corso",
+      "value": 2
+    },
+    {
+      "label": "Parziale / in corso",
+      "value": 2
+    },
+    {
+      "label": "Solo alcuni",
+      "value": 2
+    },
+    {
+      "label": "Sì (manuale)",
+      "value": 3
+    },
+    {
+      "label": "Solo i principali",
+      "value": 3
+    },
+    {
+      "label": "Separati per ambiente",
+      "value": 3
+    },
+    {
+      "label": "Sì (automatico)",
+      "value": 4
+    },
+    {
+      "label": "Confermato",
+      "value": 4
+    },
+    {
+      "label": "Sì",
+      "value": 4
+    }
+  ],
+  "classi_postura": [
+    {
+      "min": 0,
+      "max": 25,
+      "label": "Critica",
+      "colore": "#ef4444",
+      "descrizione": "L'organizzazione presenta gravi lacune nella postura cyber. È necessario un intervento immediato e strutturato."
+    },
+    {
+      "min": 25,
+      "max": 50,
+      "label": "Debole",
+      "colore": "#f59e0b",
+      "descrizione": "La postura cyber è insufficiente. Sono presenti alcune misure ma con significative carenze da colmare."
+    },
+    {
+      "min": 50,
+      "max": 75,
+      "label": "Adeguata",
+      "colore": "#3b82f6",
+      "descrizione": "L'organizzazione ha implementato le misure fondamentali. Ci sono margini di miglioramento in alcune aree."
+    },
+    {
+      "min": 75,
+      "max": 100,
+      "label": "Avanzata",
+      "colore": "#10b981",
+      "descrizione": "L'organizzazione dimostra un elevato livello di maturità nella gestione della cybersecurity."
+    }
+  ],
+  "sezioni": [
+    {
+      "id": "anagrafica",
+      "titolo": "1. INFORMAZIONI AZIENDA",
+      "categoria": "ANAGRAFICA",
+      "scored": false,
+      "domande": [
+        {
+          "id": 1,
+          "testo": "Denominazione legale completa",
+          "tipo": "text",
+          "obbligatoria": true
+        },
+        {
+          "id": 2,
+          "testo": "Settore principale di attività",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "Energia",
+            "Trasporti",
+            "Bancario",
+            "Infrastrutture mercati finanziari",
+            "Settore sanitario",
+            "Acqua potabile",
+            "Acque reflue",
+            "Infrastrutture digitali",
+            "Gestione servizi ICT",
+            "Pubblica amministrazione",
+            "Spazio",
+            "Servizi postali e corrieri",
+            "Gestione rifiuti",
+            "Fabbricazione prodotti chimici",
+            "Produzione e distribuzione alimenti",
+            "Fabbricazione dispositivi medici/elettronici/ottici",
+            "Ricerca",
+            "Fornitori di servizi digitali",
+            "Tecnologia",
+            "Ambiente",
+            "Altro"
+          ]
+        },
+        {
+          "id": 3,
+          "testo": "Numero di dipendenti",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "1-9",
+            "10-49",
+            "50-249",
+            "250+"
+          ],
+          "nota": "Dato rilevante per futura preventivazione",
+          "peso_speciale": true
+        },
+        {
+          "id": 4,
+          "testo": "Paese principale delle sedi operative",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "Italia",
+            "Afghanistan",
+            "Albania",
+            "Algeria",
+            "Andorra",
+            "Angola",
+            "Antigua e Barbuda",
+            "Arabia Saudita",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaigian",
+            "Bahamas",
+            "Bahrein",
+            "Bangladesh",
+            "Barbados",
+            "Belgio",
+            "Belize",
+            "Benin",
+            "Bhutan",
+            "Bielorussia",
+            "Birmania",
+            "Bolivia",
+            "Bosnia ed Erzegovina",
+            "Botswana",
+            "Brasile",
+            "Brunei",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Cambogia",
+            "Camerun",
+            "Canada",
+            "Capo Verde",
+            "Ciad",
+            "Cile",
+            "Cina",
+            "Cipro",
+            "Città del Vaticano",
+            "Colombia",
+            "Comore",
+            "Corea del Nord",
+            "Corea del Sud",
+            "Costa d'Avorio",
+            "Costa Rica",
+            "Croazia",
+            "Cuba",
+            "Danimarca",
+            "Dominica",
+            "Ecuador",
+            "Egitto",
+            "El Salvador",
+            "Emirati Arabi Uniti",
+            "Eritrea",
+            "Estonia",
+            "Etiopia",
+            "Fiji",
+            "Filippine",
+            "Finlandia",
+            "Francia",
+            "Gabon",
+            "Gambia",
+            "Georgia",
+            "Germania",
+            "Ghana",
+            "Giamaica",
+            "Giappone",
+            "Gibuti",
+            "Giordania",
+            "Grecia",
+            "Grenada",
+            "Guatemala",
+            "Guinea",
+            "Guinea-Bissau",
+            "Guinea Equatoriale",
+            "Guyana",
+            "Haiti",
+            "Honduras",
+            "India",
+            "Indonesia",
+            "Iran",
+            "Iraq",
+            "Irlanda",
+            "Islanda",
+            "Isole Marshall",
+            "Isole Salomone",
+            "Israele",
+            "Kazakistan",
+            "Kenya",
+            "Kirghizistan",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesotho",
+            "Lettonia",
+            "Libano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Lussemburgo",
+            "Macedonia del Nord",
+            "Madagascar",
+            "Malawi",
+            "Maldive",
+            "Malesia",
+            "Mali",
+            "Malta",
+            "Marocco",
+            "Mauritania",
+            "Mauritius",
+            "Messico",
+            "Micronesia",
+            "Moldavia",
+            "Monaco",
+            "Mongolia",
+            "Montenegro",
+            "Mozambico",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Nicaragua",
+            "Niger",
+            "Nigeria",
+            "Norvegia",
+            "Nuova Zelanda",
+            "Oman",
+            "Paesi Bassi",
+            "Pakistan",
+            "Palau",
+            "Palestina",
+            "Panama",
+            "Papua Nuova Guinea",
+            "Paraguay",
+            "Perù",
+            "Polonia",
+            "Portogallo",
+            "Qatar",
+            "Regno Unito",
+            "Repubblica Ceca",
+            "Repubblica Centrafricana",
+            "Repubblica del Congo",
+            "Repubblica Democratica del Congo",
+            "Repubblica Dominicana",
+            "Romania",
+            "Ruanda",
+            "Russia",
+            "Saint Kitts e Nevis",
+            "Saint Vincent e Grenadine",
+            "Samoa",
+            "San Marino",
+            "Santa Lucia",
+            "São Tomé e Príncipe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leone",
+            "Singapore",
+            "Siria",
+            "Slovacchia",
+            "Slovenia",
+            "Somalia",
+            "Spagna",
+            "Sri Lanka",
+            "Stati Uniti",
+            "Sudafrica",
+            "Sudan",
+            "Sudan del Sud",
+            "Suriname",
+            "Svezia",
+            "Svizzera",
+            "Swaziland",
+            "Tagikistan",
+            "Taiwan",
+            "Tanzania",
+            "Thailandia",
+            "Timor Est",
+            "Togo",
+            "Tonga",
+            "Trinidad e Tobago",
+            "Tunisia",
+            "Turchia",
+            "Turkmenistan",
+            "Tuvalu",
+            "Ucraina",
+            "Uganda",
+            "Ungheria",
+            "Uruguay",
+            "Uzbekistan",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Zambia",
+            "Zimbabwe"
+          ]
+        },
+        {
+          "id": 5,
+          "testo": "L'organizzazione ha più sedi operative in Italia?",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No"
+          ]
+        },
+        {
+          "id": "più_sedi_italia",
+          "testo": "Quante sedi operative ha l'organizzazione in Italia?",
+          "tipo": "select",
+          "obbligatoria": true,
+          "dipendenza": {
+            "domanda_id": "5",
+            "valore_richiesto": "Sì",
+            "messaggio_disabilitato": "Disponibile solo se l'organizzazione ha più sedi operative in Italia"
+          },
+          "opzioni": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5+"
+          ]
+        },
+        {
+          "id": 6,
+          "testo": "Fatturato annuale",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "< 1 Milione €",
+            "1 - 5 Milioni €",
+            "10 - 50 Milioni €",
+            " 50 - 100 Milioni €",
+            "100 - 500 Milioni €",
+            "500+ Milioni €"
+          ]
+        },
+        {
+          "id": 7,
+          "testo": "Ruolo del compilatore",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "Management",
+            "Business",
+            "IT",
+            "Tecnico",
+            "Altro"
+          ]
+        },
+        {
+          "id": 8,
+          "testo": "Quanti record di dati personali trattate?",
+          "tipo": "select",
+          "obbligatoria": true,
+          "opzioni": [
+            "Nessuno",
+            "Solo dati dipendenti",
+            "0 - 5000",
+            "5000 - 50.000",
+            "50.000 - 250.000",
+            "250.000 - 1.000.000",
+            "1.000.000+"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "profilo_nis2",
+      "titolo": "2. PROFILO ORGANIZZATIVO NIS2",
+      "categoria": "2. PROFILO NIS2",
+      "scored": true,
+      "domande": [
+        {
+          "id": 9,
+          "testo": "L'organizzazione è stata censita e registrata come soggetto NIS2?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Si",
+            "No",
+            "In corso"
+          ]
+        },
+        {
+          "id": 10,
+          "testo": "Classificazione NIS2",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Soggetto essenziale",
+            "Soggetto importante",
+            "Fornitore critico",
+            "Non applicabile",
+            "Non so"
+          ]
+        },
+        {
+          "id": 11,
+          "testo": "Ha già effettuato l'autovalutazione prevista dalla normativa?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No",
+            "Non lo so"
+          ]
+        },
+        {
+          "id": 12,
+          "testo": "Ha aggiornato le informazioni annuali entro luglio 2025?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Confermato",
+            "In corso",
+            "In valutazione",
+            "No",
+            "Non applicabile"
+          ]
+        },
+        {
+          "id": 13,
+          "testo": "Ha identificato i sistemi informativi critici?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No",
+            "In corso"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "titolo": "3. GOVERNANCE",
+      "categoria": "3. GOVERNANCE",
+      "scored": true,
+      "domande": [
+        {
+          "id": 14,
+          "testo": "Sono definiti ruoli e responsabilità in materia di cybersecurity?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No",
+            "Parzialmente"
+          ]
+        },
+        {
+          "id": 15,
+          "testo": "Esiste documentazione formale delle priorità e tolleranze al rischio cyber?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No",
+            "In corso"
+          ]
+        },
+        {
+          "id": 16,
+          "testo": "È attivo un processo formale di risk management?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No",
+            "In corso"
+          ]
+        },
+        {
+          "id": 17,
+          "testo": "Le politiche e procedure di sicurezza sono documentate e aggiornate?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 18,
+          "testo": "Gli Organi Amministrativi sono consapevoli dei loro compiti NIS2?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 19,
+          "testo": "È stato nominato il Punto di Contatto NIS2?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Si",
+            "Nominato con sostituti",
+            "Nominato senza sostituti",
+            "No",
+            "Non ancora nominato"
+          ]
+        },
+        {
+          "id": 20,
+          "testo": "È stato nominato il Referente CSIRT?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Si",
+            "Nominato con sostituti",
+            "Nominato senza sostituti",
+            "No",
+            "Non ancora nominato"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventario",
+      "titolo": "4. INVENTARIO E CLASSIFICAZIONE",
+      "categoria": "4. INVENTARIO",
+      "scored": true,
+      "domande": [
+        {
+          "id": 21,
+          "testo": "I dispositivi fisici sono censiti in un inventario aggiornato?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì in automatico",
+            "Sì manualmente",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 22,
+          "testo": "Le piattaforme software e licenze sono censite?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì in automatico",
+            "Sì manualmente",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 23,
+          "testo": "I flussi di dati sono identificati e mappati?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "In corso",
+            "No"
+          ]
+        },
+        {
+          "id": 24,
+          "testo": "È adottata una politica di classificazione degli asset?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "In corso",
+            "No"
+          ]
+        },
+        {
+          "id": 25,
+          "testo": "Trattate dati sanitari o finanziari sensibili?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Sanitari",
+            "Finanziari",
+            "Entrambi",
+            "No"
+          ]
+        },
+        {
+          "id": 26,
+          "testo": "Livello di separazione tra ambienti (prod/test/dev)",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Separati completa",
+            "Parzialmente",
+            "Nessuna separazione",
+            "Non applicabile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "formazione",
+      "titolo": "5. FORMAZIONE",
+      "categoria": "5. FORMAZIONE",
+      "scored": true,
+      "domande": [
+        {
+          "id": 27,
+          "testo": "Formazione obbligatoria in cybersecurity per tutto il personale?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parziale",
+            "No"
+          ]
+        },
+        {
+          "id": 28,
+          "testo": "Frequenza della formazione sulla sicurezza",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Continua",
+            "Annuale",
+            "Biennale",
+            "Occasionale",
+            "Mai"
+          ]
+        },
+        {
+          "id": 29,
+          "testo": "Utenti privilegiati ricevono formazione specifica?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 30,
+          "testo": "I vertici aziendali sono formati sui rischi cyber?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "protezione",
+      "titolo": "6. PROTEZIONE",
+      "categoria": "6. PROTEZIONE",
+      "scored": true,
+      "domande": [
+        {
+          "id": 31,
+          "testo": "Controlli di accesso formali ai sistemi e dati?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 32,
+          "testo": "È implementata l'autenticazione multifattore (MFA)?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Per tutti gli accessi",
+            "Solo per VPN/Remoto",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 33,
+          "testo": "È presente un firewall/gateway di sicurezza?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 34,
+          "testo": "La rete è segmentata per isolare i sistemi critici?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 35,
+          "testo": "Come è gestito l'accesso remoto?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "VPN Aziendale",
+            "Cloud sicuro",
+            "Accesso diretto",
+            "Non gestito"
+          ]
+        },
+        {
+          "id": 36,
+          "testo": "Sono eseguiti backup regolari dei dati critici?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì (automatici testati)",
+            "Sì (automatici non testati)",
+            "Manuali",
+            "No"
+          ]
+        },
+        {
+          "id": 37,
+          "testo": "Dove sono conservati i backup?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Cloud e Locale",
+            "Solo Cloud",
+            "Solo Locale",
+            "Offsite fisico",
+            "Non conservati"
+          ]
+        },
+        {
+          "id": 38,
+          "testo": "È attivo un processo di vulnerability assessment?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Continuo",
+            "Periodico",
+            "Occasionale",
+            "No"
+          ]
+        },
+        {
+          "id": "epp",
+          "testo": "EPP (Endpoint Protection Platform) — Disponete di una soluzione di protezione endpoint?",
+          "tipo": "si_no_dettaglio",
+          "obbligatoria": true,
+          "campo_dettaglio": "Quale soluzione e versione?",
+          "peso_speciale": true,
+          "peso_moltiplicatore": 2.0,
+          "nota": "Domanda ad alto impatto per assessment e futura preventivazione"
+        },
+        {
+          "id": "edr",
+          "testo": "EDR (Endpoint Detection and Response) — Disponete di una soluzione EDR?",
+          "tipo": "si_no_dettaglio",
+          "obbligatoria": true,
+          "campo_dettaglio": "Quale soluzione e versione?",
+          "peso_speciale": true,
+          "peso_moltiplicatore": 2.0,
+          "dipendenza": {
+            "domanda_id": "epp",
+            "valore_richiesto": "si",
+            "messaggio_disabilitato": "Per poter compilare questa domanda è necessario aver risposto 'Sì' alla domanda EPP. L'EDR richiede una piattaforma EPP come prerequisito."
+          },
+          "nota": "Domanda ad alto impatto — dipende da EPP"
+        },
+        {
+          "id": "firewall_extra",
+          "testo": "Firewall — Disponete di soluzioni firewall dedicate?",
+          "tipo": "si_no_dettaglio",
+          "obbligatoria": true,
+          "campo_dettaglio": "Quali firewall e versione?",
+          "peso_speciale": true,
+          "peso_moltiplicatore": 1.5,
+          "nota": "Domanda ad alto impatto per assessment e futura preventivazione"
+        },
+        {
+          "id": "xm",
+          "testo": "XM (Exposure Management) — Disponete di una soluzione di gestione dell'esposizione?",
+          "tipo": "si_no",
+          "obbligatoria": true,
+          "peso_speciale": true,
+          "peso_moltiplicatore": 1.5,
+          "nota": "Domanda ad alto impatto per assessment e futura preventivazione"
+        }
+      ]
+    },
+    {
+      "id": "rilevazione",
+      "titolo": "7. RILEVAZIONE",
+      "categoria": "7. RILEVAZIONE",
+      "scored": true,
+      "domande": [
+        {
+          "id": 39,
+          "testo": "Sistema di monitoraggio/logging attivo?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "SIEM",
+            "Logging base",
+            "No",
+            "Parziale"
+          ]
+        },
+        {
+          "id": 40,
+          "testo": "Antivirus/antimalware implementato e aggiornato?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 41,
+          "testo": "Vengono eseguiti penetration test?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì ",
+            "Annuale",
+            "Occasionale",
+            "Mai"
+          ]
+        },
+        {
+          "id": 42,
+          "testo": "Utilizzate servizi cloud (IaaS, PaaS, SaaS)?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No"
+          ]
+        },
+        {
+          "id": 43,
+          "testo": "Sviluppate software internamente?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "In valutazione",
+            "No",
+            "Non applicabile"
+          ]
+        },
+        {
+          "id": 44,
+          "testo": "Utilizzate dispositivi IoT o sistemi OT/SCADA?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "No"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "risposta",
+      "titolo": "8. RISPOSTA AGLI INCIDENTI",
+      "categoria": "8. RISPOSTA",
+      "scored": true,
+      "domande": [
+        {
+          "id": 45,
+          "testo": "Esiste un Piano di Risposta agli Incidenti documentato?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Testato periodicamente",
+            "Non testato",
+            "In corso di definizione",
+            "No"
+          ]
+        },
+        {
+          "id": 46,
+          "testo": "Il piano è stato testato o simulato?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Parzialmente",
+            "No"
+          ]
+        },
+        {
+          "id": 47,
+          "testo": "È definita la procedura di notifica alle autorità (ACN)?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Reperibilità H24",
+            "Solo in orario lavorativo",
+            "No"
+          ]
+        },
+        {
+          "id": 48,
+          "testo": "È attivo un sistema di ticketing/tracciamento incidenti?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Qualche volta",
+            "Mai"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recupero",
+      "titolo": "9. RECUPERO E CONTINUITÀ",
+      "categoria": "9. RECUPERO",
+      "scored": true,
+      "domande": [
+        {
+          "id": 49,
+          "testo": "Esiste un Piano di Continuità Operativa (BCP)?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Testato periodicamente",
+            "Non testato",
+            "In corso di definizione",
+            "No"
+          ]
+        },
+        {
+          "id": 50,
+          "testo": "Esiste un Piano di Ripristino (DRP)?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Sì",
+            "Testato periodicamente",
+            "Non testato",
+            "In corso di definizione",
+            "No"
+          ]
+        },
+        {
+          "id": 51,
+          "testo": "I backup sono testati regolarmente?",
+          "tipo": "assessment",
+          "obbligatoria": true,
+          "opzioni": [
+            "Trimestrale",
+            "Semestrale",
+            "Annuale",
+            "Mai testati"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globsit | Valutazione Postura Cyber NIS2</title>
+    <meta name="description"
+        content="Valuta la postura di cybersecurity della tua organizzazione secondo il framework NIS2. Assessment professionale con report PDF.">
+    <link rel="icon" type="image/jpeg" href="/static/img/favicon.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="app-header" id="appHeader">
+        <div class="header-inner">
+            <div class="header-logo">
+                <img src="/static/img/logo.png" alt="Globsit" class="logo-img">
+                <span class="logo-divider"></span>
+                <span class="logo-text">Postura Cyber <span class="accent">NIS2</span></span>
+            </div>
+            <nav class="header-nav" id="headerNav">
+            </nav>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <!-- ════════════════ HERO SECTION ════════════════ -->
+        <section class="hero-section" id="heroSection">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Compliance NIS2
+                </div>
+                <h1>Valutazione Postura<br>Cyber</h1>
+                <p class="hero-subtitle">
+                    Valuta il livello di maturità della tua organizzazione rispetto ai requisiti della
+                    <strong>Direttiva NIS2</strong>. Ottieni un punteggio dettagliato per area, identifica
+                    le criticità e ricevi un report professionale.
+                </p>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M9 12l2 2 4-4" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Questionario strutturato su 10 macroaree</strong>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 20V10" />
+                                <path d="M18 20V4" />
+                                <path d="M6 20v-4" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Punteggio normalizzato e classificazione</strong>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Report professionale con analisi dettagliata</strong>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg" id="btnStartAssessment">
+                    Ottieni la tua valutazione
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14" />
+                        <path d="M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- ════════════════ QUESTIONARIO ════════════════ -->
+        <section class="questionnaire-section" id="questionnaireSection" style="display:none;">
+            <!-- Stepper -->
+            <div class="stepper-container">
+                <div class="stepper" id="stepper"></div>
+                <div class="stepper-progress">
+                    <div class="stepper-progress-bar" id="stepperProgressBar"></div>
+                </div>
+            </div>
+
+            <!-- Form Steps Container -->
+            <div class="steps-container" id="stepsContainer"></div>
+
+            <!-- Navigation -->
+            <div class="nav-buttons">
+                <button class="btn btn-outline" id="btnPrev" style="display:none;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5" />
+                        <path d="M12 19l-7-7 7-7" />
+                    </svg>
+                    Indietro
+                </button>
+                <div class="nav-spacer"></div>
+                <button class="btn btn-primary" id="btnNext">
+                    Avanti
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14" />
+                        <path d="M12 5l7 7-7 7" />
+                    </svg>
+                </button>
+                <button class="btn btn-primary" id="btnSubmit" style="display:none;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 12l2 2 4-4" />
+                        <circle cx="12" cy="12" r="10" />
+                    </svg>
+                    Calcola Postura
+                </button>
+            </div>
+        </section>
+
+        <!-- ════════════════ RISULTATI ════════════════ -->
+        <section class="results-section" id="resultsSection" style="display:none;">
+            <div class="results-container">
+                <!-- Score principale -->
+                <div class="score-card" id="scoreCard">
+                    <div class="score-ring-container">
+                        <svg class="score-ring" viewBox="0 0 200 200">
+                            <circle class="score-ring-bg" cx="100" cy="100" r="85" fill="none" stroke-width="12" />
+                            <circle class="score-ring-fill" id="scoreRingFill" cx="100" cy="100" r="85" fill="none"
+                                stroke-width="12" stroke-dasharray="534" stroke-dashoffset="534" />
+                        </svg>
+                        <div class="score-ring-text">
+                            <span class="score-value" id="scoreValue">0</span>
+                            <span class="score-max">/100</span>
+                        </div>
+                    </div>
+                    <div class="score-info">
+                        <div class="score-class-badge" id="scoreClassBadge">—</div>
+                        <p class="score-description" id="scoreDescription"></p>
+                    </div>
+                </div>
+
+                <!-- Dettaglio macroaree -->
+                <div class="areas-card">
+                    <h2 class="card-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 20V10" />
+                            <path d="M18 20V4" />
+                            <path d="M6 20v-4" />
+                        </svg>
+                        Dettaglio per Macroarea
+                    </h2>
+                    <div class="areas-list" id="areasList"></div>
+                </div>
+
+                <!-- Punti forza e gap -->
+                <div class="analysis-grid">
+                    <div class="analysis-card strengths-card">
+                        <h3>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                <polyline points="22 4 12 14.01 9 11.01" />
+                            </svg>
+                            Punti di Forza
+                        </h3>
+                        <ul id="strengthsList"></ul>
+                    </div>
+                    <div class="analysis-card gaps-card">
+                        <h3>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="15" y1="9" x2="9" y2="15" />
+                                <line x1="9" y1="9" x2="15" y2="15" />
+                            </svg>
+                            Principali Gap
+                        </h3>
+                        <ul id="gapsList"></ul>
+                    </div>
+                </div>
+
+                <!-- Azioni finali -->
+                <div class="actions-card">
+                    <h2 class="card-title">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                        Report e Azioni
+                    </h2>
+                    <div class="actions-grid">
+                        <button class="btn btn-primary btn-action" id="btnDownloadPdf">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                <polyline points="7 10 12 15 17 10" />
+                                <line x1="12" y1="15" x2="12" y2="3" />
+                            </svg>
+                            Scarica Report PDF
+                        </button>
+                        <button class="btn btn-outline btn-action" id="btnSendEmail">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            Richiedi Report via Email
+                        </button>
+                        <button class="btn btn-ghost btn-action" id="btnNewAssessment">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="1 4 1 10 7 10" />
+                                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10" />
+                            </svg>
+                            Nuovo Assessment
+                        </button>
+                    </div>
+                    <div class="email-status" id="emailStatus" style="display:none;"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Verifica OTP -->
+    <div class="otp-modal-overlay" id="otpModal">
+        <div class="otp-modal">
+            <h2 class="otp-modal-title">Verifica Email</h2>
+            <p class="otp-modal-subtitle">
+                Abbiamo inviato un codice di sicurezza a<br>
+                <strong id="otpUserEmail">...</strong>
+            </p>
+            <div class="otp-input-container">
+                <input type="text" class="otp-code-input" id="otpCodeInput" maxlength="6" placeholder="000000"
+                    autocomplete="off">
+                <div class="form-error" id="otpError">Codice non valido</div>
+            </div>
+            <div class="otp-modal-buttons">
+                <button class="btn btn-outline" id="btnOtpCancel">Annulla</button>
+                <button class="btn btn-primary" id="btnOtpConfirm">Verifica e procedi</button>
+            </div>
+            <button class="otp-resend-link" id="btnOtpResend">Non hai ricevuto il codice? Reinvia</button>
+        </div>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay" style="display:none;">
+        <div class="loading-spinner"></div>
+        <p id="loadingText">Calcolo in corso...</p>
+    </div>
+
+    <footer class="app-footer">
+        <p>© Globsit — Valutazione Postura Cyber NIS2 · Tutti i diritti riservati</p>
+    </footer>
+
+    <script src="/static/js/questionario.js"></script>
+    <script src="/static/js/scoring.js"></script>
+    <script src="/static/js/pdf.js"></script>
+    <script src="/static/js/email.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+
+</html>
