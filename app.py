@@ -184,6 +184,18 @@ def calcola_score(risposte: dict) -> dict:
 
     for sezione in questionario['sezioni']:
         if not sezione.get('scored', False):
+            # Includi le domande anagrafiche per il report finale (senza calcolare lo score)
+            for domanda in sezione['domande']:
+                d_id = str(domanda['id'])
+                risposta_raw = risposte.get(d_id, '')
+                if risposta_raw:
+                    dettaglio_risposte[d_id] = {
+                        'domanda': domanda['testo'],
+                        'risposta': risposta_raw,
+                        'score': 'INFO',
+                        'categoria': '1. INFORMAZIONI AZIENDA',
+                        'peso_speciale': False
+                    }
             continue
 
         cat = sezione['categoria']
@@ -243,11 +255,11 @@ def calcola_score(risposte: dict) -> dict:
         colore = '#f59e0b'
         desc_classe = "Contatta i nostri specialisti per pianificare una sessione di audit approfondita."
     elif score_finale < 75:
-        classe = 'Adeguata'
+        classe = 'Potenzialmente adeguata'
         colore = '#3b82f6'
         desc_classe = "Contatta i nostri specialisti per pianificare una sessione di audit approfondita."
     else:
-        classe = 'Avanzata'
+        classe = 'Potenzialmente avanzata'
         colore = '#10b981'
         desc_classe = "Contatta i nostri specialisti per pianificare una sessione di audit approfondita."
 
@@ -556,7 +568,8 @@ def genera_pdf(dati_richiedente: dict, risultati: dict) -> bytes:
                 pdf.cell(110, 5, pdf._safe(f"  {domanda_text[:70]}"), 0, 0, 'L', True)
                 pdf.cell(50, 5, pdf._safe(f"  {det['risposta'][:30]}"), 0, 0, 'L', True)
                 pdf.set_text_color(*ReportPDF.DARK)
-                pdf.cell(20, 5, f"{det['score']}/4", 0, 1, 'C', True)
+                score_str = f"{det['score']}/4" if isinstance(det['score'], (int, float)) else str(det['score'])
+                pdf.cell(20, 5, score_str, 0, 1, 'C', True)
 
                 fill = not fill
 
@@ -702,7 +715,7 @@ def prepara_email_admin(dati_richiedente: dict, risultati: dict, pdf_bytes: byte
 def prepara_email_richiedente(dati_richiedente: dict, risultati: dict, pdf_bytes: bytes) -> dict:
     """Invia email con report al richiedente."""
     corpo = f'''
-    <html><body style="font-family:Arial,sans-serif;">
+    <html><body style="font-family:Arial,sans-serif; color:#1a1a2e;">
     <h2 style="color:#e87e04;">Il suo Report Postura Cyber NIS2</h2>
     <p>Gentile {html_escape(dati_richiedente.get('nome_azienda',''))},</p>
     <p>In allegato trova il report dell'assessment di postura cyber NIS2 effettuato.</p>
@@ -711,8 +724,13 @@ def prepara_email_richiedente(dati_richiedente: dict, risultati: dict, pdf_bytes
         <tr><td style="padding:5px 15px 5px 0;font-weight:bold;">Classe:</td><td>{risultati['classe']}</td></tr>
     </table>
     <p>{html_escape(risultati['descrizione_classe'])}</p>
+    <p style="margin:20px 0; line-height:1.6;">
+        Contatta i nostri specialisti per pianificare una sessione di audit approfondita.<br>
+        <strong>Cellulare:</strong> +39 3484801645<br>
+        <strong>Telefono:</strong> +39 095 981130
+    </p>
     <p style="font-size:12px;color:#666;">Questo assessment e' preliminare e non costituisce una certificazione ufficiale.</p>
-    <p>Cordiali saluti,<br>Globsit - Cybersecurity</p>
+    <p>Cordiali saluti,<br>Globsit</p>
     </body></html>
     '''
 
@@ -1012,10 +1030,10 @@ def serve_static(filename):
 
 if __name__ == '__main__':
     logger.info("=" * 60)
-    logger.info("Postura Cyber NIS2 — Avvio server")
+    logger.info("Postura Cyber NIS2 — Avvio server in modalità produzione")
     logger.info(f"Email invio reale: {'ABILITATO' if EMAIL_CONFIG['enabled'] else 'DISABILITATO (mock)'}")
     if EMAIL_CONFIG['enabled']:
         logger.info(f"SMTP: {EMAIL_CONFIG['smtp_host']}:{EMAIL_CONFIG['smtp_port']}")
         logger.info(f"Admin destinatario: {EMAIL_CONFIG['destinatario_admin']}")
     logger.info("=" * 60)
-    app.run(host='0.0.0.0', debug=True, port=5006)
+    app.run(host='0.0.0.0', debug=False, port=5006)

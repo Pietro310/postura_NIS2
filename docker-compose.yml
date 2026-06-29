@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: postura_nis2_prod
+    ports:
+      - "5006:5006"
+    env_file:
+      - .env
+    environment:
+      - FLASK_ENV=production
+    restart: unless-stopped
